@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "charterino-test", "charterino-test\charterino-test.csproj", "{AFBE43F9-9729-41E7-B384-9527138DDCCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFBE43F9-9729-41E7-B384-9527138DDCCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFBE43F9-9729-41E7-B384-9527138DDCCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFBE43F9-9729-41E7-B384-9527138DDCCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFBE43F9-9729-41E7-B384-9527138DDCCC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C5EBC262-E46D-4C0B-9E81-447CCCB511FA}
+	EndGlobalSection
+EndGlobal

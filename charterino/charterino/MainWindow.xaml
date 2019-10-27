@@ -1,0 +1,45 @@
+﻿<Window x:Class="charterino.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:charterino"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF" 
+        Title="Charterino" Height="450" Width="800" ScrollViewer.VerticalScrollBarVisibility="Disabled" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="415*"/>
+            <ColumnDefinition Width="184*"/>
+            <ColumnDefinition Width="195*"/>
+        </Grid.ColumnDefinitions>
+        <Grid fw:PointerTracker.Enabled="True" Background="#01FFFFFF" HorizontalAlignment="Left" Width="181">
+            <StackPanel>
+                <ListView FontSize="15">
+                    <ListViewItem Padding="1" PreviewMouseLeftButtonDown="OnImportDataClicked" Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Import" Margin="15"/>
+                            <TextBlock VerticalAlignment="Center" Text="Import data"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem Padding="1" PreviewMouseLeftButtonDown="OnManageDataClicked" Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="DatabaseEdit" Margin="15"/>
+                            <TextBlock VerticalAlignment="Center" Text="Manage data"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem Padding="1" PreviewMouseLeftButtonDown="OnVisualizeDataClicked">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Database" Margin="15"/>
+                            <TextBlock  VerticalAlignment="Center" Text="Visualize data"/>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
+        </Grid>
+        <Frame x:Name="_mainFrame" Grid.ColumnSpan="3" Margin="181,0,0,0" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
