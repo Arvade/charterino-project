@@ -7,10 +7,17 @@ using System.Threading.Tasks;
 namespace charterino_bo.model
 {
     public class Product {
-        private int id { get; set; }
-        private string name { get; set; }
-        private double price { get; set; }
-        private DateTime expiration_date { get; set; } 
-        private int sold { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public double price { get; set; }
+        public int sold { get; set; }
+
+        public Product(int id, string name, double price, int sold)
+        {
+            this.id = id;
+            this.name = name;
+            this.price = price;
+            this.sold = sold;
+        }
     }
 }
