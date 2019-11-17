@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="charterino_bo">
-      <HintPath>..\..\charterino_bo\charterino_bo\obj\Debug\charterino_bo.dll</HintPath>
+      <HintPath>..\..\charterino-bo\charterino_bo\bin\Debug\charterino_bo.dll</HintPath>
     </Reference>
     <Reference Include="FluentWPF, Version=0.8.0.4, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentWPF.0.8.0-alpha004\lib\net45\FluentWPF.dll</HintPath>
