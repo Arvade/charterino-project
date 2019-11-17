@@ -7,39 +7,58 @@
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF" 
-        Title="Charterino" Height="450" Width="800" ScrollViewer.VerticalScrollBarVisibility="Disabled" ResizeMode="NoResize">
+        Title="Charterino" Height="450" Width="800" ScrollViewer.VerticalScrollBarVisibility="Disabled" ResizeMode="NoResize" Background="{x:Null}" Foreground="{x:Null}"
+		Style="{StaticResource CustomWindow}" x:Name="testw">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="35"></WindowChrome>
+    </WindowChrome.WindowChrome>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="415*"/>
-            <ColumnDefinition Width="184*"/>
-            <ColumnDefinition Width="195*"/>
-        </Grid.ColumnDefinitions>
-        <Grid fw:PointerTracker.Enabled="True" Background="#01FFFFFF" HorizontalAlignment="Left" Width="181">
-            <StackPanel>
-                <ListView FontSize="15">
-                    <ListViewItem Padding="1" PreviewMouseLeftButtonDown="OnImportDataClicked" Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Import" Margin="15"/>
-                            <TextBlock VerticalAlignment="Center" Text="Import data"/>
-                        </StackPanel>
-                    </ListViewItem>
+        <Border BorderThickness="0 5 0 0" BorderBrush="#389484" Margin="185,0,0,0">
+            <Grid VerticalAlignment="Top" Background="#FAFAFAFA">
+                <StackPanel Height="30" WindowChrome.IsHitTestVisibleInChrome="True" VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button Width="35" Name="MinimizeButton" Padding="0">
+                        <materialDesign:PackIcon Kind="WindowMinimize" Foreground="#389484"/>
+                    </Button>
+                    <Button Width="35" Name="MaximizeButton" Padding="0">
+                        <materialDesign:PackIcon Kind="WindowMaximize" Foreground="#389484"/>
+                    </Button>
+                    <Button Width="35" Name="CloseButton" Padding="0">
+                        <materialDesign:PackIcon Kind="Close" Foreground="#389484"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border BorderThickness="0 5 0 0" BorderBrush="#389484" HorizontalAlignment="Left">
+            <Grid fw:PointerTracker.Enabled="True" HorizontalAlignment="Left" Width="185" Background="#389484" Margin="0">
+                <Border VerticalAlignment="Top" BorderThickness="0 0 0 2" BorderBrush="#67FBF0" Margin="15,0" Height="86">
+                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Text="Charterino" Foreground="#FFFFFF" FontSize="26" TextAlignment="Center" Width="184" Margin="-14,27,-15,0" Height="33" FontFamily="Microsoft YaHei UI" FontWeight="Bold"/>
+                </Border>
+                <StackPanel>
+                    <ListView FontSize="15" Margin="0,98.9,0,0" Background="#F9FAFAFA">
+                        <ListViewItem Padding="1" PreviewMouseLeftButtonDown="OnImportDataClicked" Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Import" Margin="15" Foreground="#67FBF0"/>
+                                <TextBlock VerticalAlignment="Center" Text="Import Data" Foreground="#FAFAFA"  FontFamily="Microsoft YaHei UI" FontWeight="Bold"/>
+                            </StackPanel>
+                        </ListViewItem>
 
-                    <ListViewItem Padding="1" PreviewMouseLeftButtonDown="OnManageDataClicked" Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="DatabaseEdit" Margin="15"/>
-                            <TextBlock VerticalAlignment="Center" Text="Manage data"/>
-                        </StackPanel>
-                    </ListViewItem>
+                        <ListViewItem Padding="1" PreviewMouseLeftButtonDown="OnManageDataClicked" Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="DatabaseEdit" Margin="15" Foreground="#67FBF0"/>
+                                <TextBlock VerticalAlignment="Center" Text="Manage Data" Foreground="#FAFAFA" FontFamily="Microsoft YaHei UI" FontWeight="Bold"/>
+                            </StackPanel>
+                        </ListViewItem>
 
-                    <ListViewItem Padding="1" PreviewMouseLeftButtonDown="OnVisualizeDataClicked">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Database" Margin="15"/>
-                            <TextBlock  VerticalAlignment="Center" Text="Visualize data"/>
-                        </StackPanel>
-                    </ListViewItem>
-                </ListView>
-            </StackPanel>
-        </Grid>
-        <Frame x:Name="_mainFrame" Grid.ColumnSpan="3" Margin="181,0,0,0" NavigationUIVisibility="Hidden"/>
+                        <ListViewItem Padding="1" PreviewMouseLeftButtonDown="OnVisualizeDataClicked" Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Database" Margin="15" Foreground="#67FBF0"/>
+                                <TextBlock  VerticalAlignment="Center" Text="Visualize Data" Foreground="#FAFAFA"  FontFamily="Microsoft YaHei UI" FontWeight="Bold"/>
+                            </StackPanel>
+                        </ListViewItem>
+                    </ListView>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Frame x:Name="_mainFrame" Margin="185,35,0,0" NavigationUIVisibility="Hidden" Background="#FAFAFAFA"/>
     </Grid>
 </Window>

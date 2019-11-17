@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\barto\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\barto\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_charterino.-1142580378.00" t="ExcludeRecursive" />
+    <e p="C:\Users\barto\Desktop\charterino-project\charterino" t="IncludeFlat">
+      <e p="charterino" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="charterino.csproj" t="IncludeRecursive" />
+        <e p="ImportDataPage.xaml" t="Include" />
+        <e p="ImportDataPage.xaml.cs" t="Include" />
+        <e p="MainWindow.xaml" t="Include" />
+        <e p="MainWindow.xaml.cs" t="Include" />
+        <e p="ManageDataPage.xaml" t="Include" />
+        <e p="ManageDataPage.xaml.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="VisualizeDataPage.xaml" t="Include" />
+        <e p="VisualizeDataPage.xaml.cs" t="Include" />
+      </e>
+      <e p="charterino.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

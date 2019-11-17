@@ -4,9 +4,32 @@
              xmlns:local="clr-namespace:charterino"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <!--  FluentWPF Controls  -->
+		<ResourceDictionary>
+			<Style x:Key="CustomWindow" TargetType="{x:Type Window}">
+				<Setter Property="WindowStyle" Value="None"/>
+				<Setter Property="AllowsTransparency" Value="True"/>
+				<Setter Property="ResizeMode" Value="CanResize"/>
+				<Setter Property="Background" Value="MintCream"/>
+			</Style>
+			<Style TargetType="{x:Type Button}">
+				<Setter Property="Background" Value="#00FCF6F5"/>
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type Button}">
+							<Border Background="{TemplateBinding Background}">
+								<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							</Border>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+				<Style.Triggers>
+					<Trigger Property="IsMouseOver" Value="True">
+						<Setter Property="Background" Value="#F2EAEAEA"/>
+					</Trigger>
+				</Style.Triggers>
+			</Style>
+			<ResourceDictionary.MergedDictionaries>
+				<!--  FluentWPF Controls  -->
                 <ResourceDictionary Source="pack://application:,,,/FluentWPF;component/Styles/Controls.xaml" />
 
                 <!-- Material Design Controls-->
@@ -15,4 +38,5 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
+	
 </Application>

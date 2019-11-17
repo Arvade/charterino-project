@@ -10,7 +10,6 @@ namespace charterino_bo.model
         private int id { get; set; }
         private string name { get; set; }
         private double price { get; set; }
-        private DateTime expiration_date { get; set; } 
         private int sold { get; set; }
     }
 }

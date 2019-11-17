@@ -1,4 +1,5 @@
-﻿using System;
+﻿using charterino_bo.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,8 @@ namespace charterino
     /// </summary>
     public partial class VisualizeDataPage : Page
     {
+        List<Product> data = new List<Product>();
+
         public VisualizeDataPage()
         {
             InitializeComponent();
