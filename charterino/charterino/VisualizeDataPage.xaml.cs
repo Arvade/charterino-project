@@ -1,30 +1,19 @@
-﻿using charterino_bo.model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Collections.Generic;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using charterino_bo.model;
+using charterino_bo.repository;
 
-namespace charterino
-{
+namespace charterino {
     /// <summary>
     /// Interaction logic for VisualizeDataPage.xaml
     /// </summary>
-    public partial class VisualizeDataPage : Page
-    {
+    public partial class VisualizeDataPage : Page {
         List<Product> dataMock = new List<Product>();
+        private ProductRepository _productRepository;
 
-        public VisualizeDataPage()
-        {
+        public VisualizeDataPage(ProductRepository productRepository) {
+            this._productRepository = productRepository;
+
             dataMock.Add(new Product(1, "Cool product1", 2.52, 10));
             dataMock.Add(new Product(2, "Cool product2", 3.52, 12));
             dataMock.Add(new Product(3, "Cool product3", 5.52, 15));
