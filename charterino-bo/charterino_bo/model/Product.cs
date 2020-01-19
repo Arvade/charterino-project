@@ -9,13 +9,15 @@ namespace charterino_bo.model
     public class Product {
         public int id { get; set; }
         public string name { get; set; }
+        public string category { get; set; }
         public double price { get; set; }
         public int sold { get; set; }
 
-        public Product(int id, string name, double price, int sold)
+        public Product(int id, string name, string category, double price, int sold)
         {
             this.id = id;
             this.name = name;
+            this.category = category;
             this.price = price;
             this.sold = sold;
         }
