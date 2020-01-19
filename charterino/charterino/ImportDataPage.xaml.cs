@@ -35,17 +35,30 @@ namespace charterino {
                 CurrentlyLoadedFilename.Text = dialog.SafeFileName;
 
                 using (StreamReader reader = new StreamReader(dialog.FileName)) {
-                    List<Product> data2 = fileImportData.Import(reader);
-                    data2.ForEach(row => logSingleRow(row));
-                    _productRepository.setProducts(data2);
+                    try
+                    {
+                        List<Product> data2 = fileImportData.Import(reader);
+                        data2.ForEach(row => logSingleRow(row));
+                        _productRepository.setProducts(data2);
+                    }catch(CsvHelper.HeaderValidationException ex) 
+                    {
+                        clearLogs();
+                        logText("Incorrect file");
+                    }
                 }
             }
         }
 
         private void logSingleRow(Product row) {
+            logText(row.ToString());
+        }
+
+        private void logText(string text)
+        { 
             TextBlock textBlock = new TextBlock();
-            textBlock.Text = row.ToString();
+            textBlock.Text = text;
             LogContent.Children.Add(textBlock);
+            
         }
     }
 }
