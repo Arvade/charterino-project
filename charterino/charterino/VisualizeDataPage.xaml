@@ -13,6 +13,7 @@
 
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Visualize your data" VerticalAlignment="Top" Height="65" Width="455" FontSize="36"/>
+        <TextBlock Name="dataWarning" HorizontalAlignment="Center" TextWrapping="WrapWithOverflow"  Text="Please, import data beforehand." VerticalAlignment="Top" FontSize="22" Margin="172,171,173,0"/>
         <lvc:CartesianChart Name="ChartBar" Series="{Binding BarChartCollection}" LegendLocation="None" Margin="10,75,10,0">
             <lvc:CartesianChart.DataTooltip>
                 <lvc:DefaultTooltip SelectionMode="OnlySender" CornerRadius="5" BulletSize="30" ForceCursor="True"/>

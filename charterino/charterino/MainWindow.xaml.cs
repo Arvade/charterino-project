@@ -180,7 +180,7 @@ namespace charterino {
 
             _importDataPage = new ImportDataPage(_productRepository, fileImportData);
             _manageDataPage = new ManageDataPage(_productRepository);
-            _visualizeDataPage = new VisualizeDataPage(_productRepository);
+            //_visualizeDataPage = new VisualizeDataPage(_productRepository);
             _mainFrame.Navigate(_importDataPage);
         }
 
@@ -194,7 +194,7 @@ namespace charterino {
         }
 
         private void OnVisualizeDataClicked(object sender, MouseButtonEventArgs e) {
-            _mainFrame.Navigate(_visualizeDataPage);
+            _mainFrame.Navigate(new VisualizeDataPage(_productRepository));
         }
     }
 }

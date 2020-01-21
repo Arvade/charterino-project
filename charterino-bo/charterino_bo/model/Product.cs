@@ -5,7 +5,7 @@
         public string category { get; set; }
         public double price { get; set; }
         public int sold { get; set; }
-        public Product(int id, string name, double price, int sold) {
+        public Product(int id, string name, string category, double price, int sold) {
 
             this.id = id;
             this.name = name;
@@ -15,7 +15,7 @@
         }
 
         public override string ToString() {
-            return $"[id: {id}, name: {name}, price: {price}, sold: {sold}]";
+            return $"[id: {id}, name: {name}, category: {category},price: {price}, sold: {sold}]";
         }
 
         public override bool Equals(object obj) {
@@ -26,7 +26,7 @@
         }
 
         private bool Equals(Product other) {
-            return id == other.id && name == other.name && price.Equals(other.price) && sold == other.sold;
+            return id == other.id && name == other.name && category == other.category && price.Equals(other.price) && sold == other.sold;
         }
 
         public override int GetHashCode() {
