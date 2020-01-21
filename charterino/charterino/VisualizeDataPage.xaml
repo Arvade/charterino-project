@@ -36,7 +36,7 @@
                 <lvc:Axis LabelFormatter="{x:Null}"></lvc:Axis>
             </lvc:CartesianChart.AxisY>
             <lvc:CartesianChart.AxisX>
-                <lvc:Axis Title="Income from categories" FontSize="15" LabelFormatter="{Binding StackedFormatter}"></lvc:Axis>
+                <lvc:Axis Title="Income from categories (in $)" FontSize="15" LabelFormatter="{Binding StackedFormatter}"></lvc:Axis>
             </lvc:CartesianChart.AxisX>
         </lvc:CartesianChart>
         <lvc:PieChart Name="ChartPie" Series="{Binding PieChartCollection}" DataTooltip="{x:Null}" FontSize="15" LegendLocation="Left" Hoverable="False" Margin="34,80,156,50" RenderTransformOrigin="0.513,0.475">
