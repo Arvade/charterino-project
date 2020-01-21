@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="13.0.0" />
     <PackageReference Include="nunit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
@@ -16,6 +17,9 @@
   <ItemGroup>
     <Reference Include="charterino_bo">
       <HintPath>..\..\charterino_bo\charterino_bo\obj\Debug\charterino_bo.dll</HintPath>
+    </Reference>
+    <Reference Include="charterino_bo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\charterino-bo\charterino_bo\obj\Debug\charterino_bo.dll</HintPath>
     </Reference>
   </ItemGroup>
 

@@ -1,27 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows.Controls;
+using charterino_bo.repository;
 
-namespace charterino
-{
+namespace charterino {
     /// <summary>
     /// Interaction logic for ManageDataPage.xaml
     /// </summary>
-    public partial class ManageDataPage : Page
-    {
-        public ManageDataPage()
-        {
+    public partial class ManageDataPage : Page {
+        private ProductRepository _productRepository;
+
+        public ManageDataPage(ProductRepository productRepository) {
+            this._productRepository = productRepository;
             InitializeComponent();
         }
     }

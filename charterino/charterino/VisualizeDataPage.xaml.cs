@@ -18,8 +18,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LiveCharts.Defaults;
 
-namespace charterino
-{
+namespace charterino {
     /// <summary>
     /// Interaction logic for VisualizeDataPage.xaml
     /// </summary>
@@ -39,7 +38,12 @@ namespace charterino
 
         Charts Charts;
         //TODO: remove
+    public partial class VisualizeDataPage : Page {
         List<Product> dataMock = new List<Product>();
+        private ProductRepository _productRepository;
+
+        public VisualizeDataPage(ProductRepository productRepository) {
+            this._productRepository = productRepository;
 
         public VisualizeDataPage()
         {
@@ -56,6 +60,12 @@ namespace charterino
             dataMock.Add(new Product(4, "Piłka", "games", 1.30, 36));
             dataMock.Add(new Product(5, "Szklanka", "accessories", 9.30, 11));
             dataMock.Add(new Product(6, "Pepsi", "drinks", 1.92, 19));
+            dataMock.Add(new Product(1, "Cool product1", 2.52, 10));
+            dataMock.Add(new Product(2, "Cool product2", 3.52, 12));
+            dataMock.Add(new Product(3, "Cool product3", 5.52, 15));
+            dataMock.Add(new Product(4, "Cool product4", 1.30, 156));
+            dataMock.Add(new Product(5, "Cool product5", 9.30, 11));
+            dataMock.Add(new Product(6, "Cool product6", 1.92, 19));
 
             InitializeComponent();
 

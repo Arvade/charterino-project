@@ -38,8 +38,12 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="charterino_bo">
+    <Reference Include="charterino_bo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\charterino-bo\charterino_bo\bin\Debug\charterino_bo.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper, Version=13.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.13.0.0\lib\net47\CsvHelper.dll</HintPath>
     </Reference>
     <Reference Include="FluentWPF, Version=0.8.0.4, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentWPF.0.8.0-alpha004\lib\net45\FluentWPF.dll</HintPath>
