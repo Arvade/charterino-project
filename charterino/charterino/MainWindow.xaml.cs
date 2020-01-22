@@ -8,6 +8,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms.DataVisualization.Charting;
+using charterino_bo.chart;
 using charterino_bo.import;
 using charterino_bo.model;
 using charterino_bo.repository;
@@ -17,12 +18,12 @@ namespace charterino {
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
-
         private ImportDataPage _importDataPage;
         private ManageDataPage _manageDataPage;
         private VisualizeDataPage _visualizeDataPage;
 
         private ProductRepository _productRepository;
+        private Charts _charts;
 
         private FileImportData<Product> fileImportData;
 
@@ -177,6 +178,7 @@ namespace charterino {
                 .registerStrategy(new JsonFileImport())
                 .registerStrategy(new CsvFileImport())
                 .build();
+            _charts = new Charts();
 
             _importDataPage = new ImportDataPage(_productRepository, fileImportData);
             _manageDataPage = new ManageDataPage(_productRepository);
@@ -194,7 +196,7 @@ namespace charterino {
         }
 
         private void OnVisualizeDataClicked(object sender, MouseButtonEventArgs e) {
-            _mainFrame.Navigate(new VisualizeDataPage(_productRepository));
+            _mainFrame.Navigate(new VisualizeDataPage(_productRepository, _charts));
         }
     }
 }
