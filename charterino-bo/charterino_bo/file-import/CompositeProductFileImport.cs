@@ -5,6 +5,10 @@ using System.Linq;
 using charterino_bo.model;
 
 namespace charterino_bo.import {
+    
+    /// <summary>
+    ///  Strategy which groups FileImportData<T> implementations
+    /// </summary>
     public class CompositeProductFileImport : FileImportData<Product> {
         private List<FileImportData<Product>> strategies = new List<FileImportData<Product>>();
 
