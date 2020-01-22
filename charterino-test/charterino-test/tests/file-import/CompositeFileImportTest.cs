@@ -24,8 +24,8 @@ namespace charterino_test {
             StreamReader reader = readJsonTestFile();
 
             List<Product> expectedResult = new List<Product>();
-            expectedResult.Add(new Product(1, "name", 2.50, 10));
-            expectedResult.Add(new Product(2, "name2", 3.20, 1));
+            expectedResult.Add(new Product(1, "name", "category", 2.50, 10));
+            expectedResult.Add(new Product(2, "name2", "category", 3.20, 1));
 
             // When
             List<Product> result = composite.Import(reader);
