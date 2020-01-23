@@ -27,6 +27,9 @@ namespace charterino {
         List<Product> productList;
         ProductRepository _productRepository;
 
+        /// <summary>
+        /// Interaction logic for VisualizeDataPage.xaml
+        /// </summary>
         public VisualizeDataPage(ProductRepository productRepository, Charts charts) {
             Charts = charts;
             _productRepository = productRepository;
@@ -52,6 +55,9 @@ namespace charterino {
             }
         }
 
+        /// <summary>
+        /// Creating an instance of a bar chart.
+        /// </summary>
         void InstantiateBarChart() {
             productList = _productRepository.getProducts();
             string[] distinctCategories = Charts.DistinctCategories(productList);
@@ -59,6 +65,9 @@ namespace charterino {
             DataContext = this;
         }
 
+        /// <summary>
+        /// Creating an instance of a pie chart.
+        /// </summary>
         void InstantiatePieChart() {
             productList = _productRepository.getProducts();
             string[] distinctCategories = Charts.DistinctCategories(productList);
@@ -66,6 +75,9 @@ namespace charterino {
             DataContext = this;
         }
 
+        /// <summary>
+        /// Creating an instance of a stacked chart.
+        /// </summary>
         void InstantiateStackedChart() {
             productList = _productRepository.getProducts();
             string[] distinctCategories = Charts.DistinctCategories(productList);
@@ -73,6 +85,9 @@ namespace charterino {
             DataContext = this;
         }
 
+        /// <summary>
+        /// Displaying instantiated bar chart.
+        /// </summary>
         void ShowBarChart() {
             InstantiateBarChart();
             ChartPie.Visibility = Visibility.Hidden;
@@ -81,6 +96,9 @@ namespace charterino {
             ChangeButtonColor(ChartBarButton);
         }
 
+        /// <summary>
+        /// Displaying instantiated pie chart.
+        /// </summary>
         void ShowPieChart() {
             InstantiatePieChart();
             ChartPie.Visibility = Visibility.Visible;
@@ -89,6 +107,9 @@ namespace charterino {
             ChangeButtonColor(ChartPieButton);
         }
 
+        /// <summary>
+        /// Displaying instantiated stacked chart.
+        /// </summary>
         void ShowStackedChart() {
             InstantiateStackedChart();
             ChartPie.Visibility = Visibility.Hidden;
@@ -97,6 +118,9 @@ namespace charterino {
             ChangeButtonColor(ChartStackedButton);
         }
 
+        /// <summary>
+        /// Switching buttons.
+        /// </summary>
         public void ChangeButtonColor(Button button) {
             ChartPieButton.Background = lightGreen;
             ChartStackedButton.Background = lightGreen;

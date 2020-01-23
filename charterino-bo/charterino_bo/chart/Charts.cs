@@ -9,6 +9,9 @@ namespace charterino_bo.chart
 {
     public class Charts
     {
+        /// <summary>
+        /// Logic for creatic a bar chart
+        /// </summary>
         public SeriesCollection GenerateBarChart(List<Product> data, string[] distinctCategories, out string[] BarLabels, out Func<int, string> BarFormatter)
         {
             SeriesCollection BarChartCollection = new SeriesCollection();
@@ -36,6 +39,9 @@ namespace charterino_bo.chart
             return BarChartCollection;
         }
 
+        /// <summary>
+        /// Logic for creatic a stacked chart
+        /// </summary>
         public SeriesCollection GenerateStackedChart(List<Product> data, string[] distinctCategories, out Func<double, string> StackedFormatter)
         {
             SeriesCollection StackedChartCollection = new SeriesCollection();
@@ -65,6 +71,9 @@ namespace charterino_bo.chart
             return StackedChartCollection;
         }
 
+        /// <summary>
+        /// Logic for creatic a pie chart
+        /// </summary>
         public SeriesCollection GeneratePieChart(List<Product> data, string[] distinctCategories)
         {
             SeriesCollection PieChartCollection = new SeriesCollection();
@@ -91,6 +100,7 @@ namespace charterino_bo.chart
             return PieChartCollection;
         }
 
+        //getting distinct categories from product list
         public string[] DistinctCategories(List<Product> data)
         {
             return data.Select(product => product.category).Distinct().ToArray();
