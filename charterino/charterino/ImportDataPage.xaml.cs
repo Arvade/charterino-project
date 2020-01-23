@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,7 +13,7 @@ namespace charterino {
     /// Interaction logic for ImportDataPage.xaml
     /// </summary>
     public partial class ImportDataPage : Page {
-        private ProductRepository _productRepository;
+        private readonly ProductRepository _productRepository;
         private FileImportData<Product> fileImportData;
 
         public ImportDataPage(ProductRepository productRepository, FileImportData<Product> fileImportData) {
@@ -26,25 +27,25 @@ namespace charterino {
         }
 
         private void selectFile(object sender, RoutedEventArgs e) {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Supported data files |*.json;*.xlxs;*.csv";
+            clearLogs();
+            OpenFileDialog dialog = new OpenFileDialog {Filter = "Supported data files |*.json;*.xlxs;*.csv"};
             bool? result = dialog.ShowDialog();
 
-            if (result.HasValue && result.Value) {
-                SelectedFileField.Text = dialog.FileName;
-                CurrentlyLoadedFilename.Text = dialog.SafeFileName;
-
-                using (StreamReader reader = new StreamReader(dialog.FileName)) {
-                    try
-                    {
-                        List<Product> data2 = fileImportData.Import(reader);
-                        data2.ForEach(row => logSingleRow(row));
-                        _productRepository.setProducts(data2);
-                    }catch(CsvHelper.HeaderValidationException ex) 
-                    {
-                        clearLogs();
-                        logText("Incorrect file");
-                    }
+            if (!result.HasValue || !result.Value) return;
+            using (StreamReader reader = new StreamReader(dialog.FileName)) {
+                try
+                {
+                    List<Product> data2 = fileImportData.Import(reader);
+                    data2.ForEach(row => logSingleRow(row));
+                    _productRepository.setProducts(data2);
+                    SelectedFileField.Text = dialog.FileName;
+                    CurrentlyLoadedFilename.Text = dialog.SafeFileName;
+                }catch(Exception ex) 
+                {
+                    clearLogs();
+                    logText("Incorrect file");
+                    SelectedFileField.Text = "";
+                    CurrentlyLoadedFilename.Text = "";
                 }
             }
         }
@@ -58,7 +59,6 @@ namespace charterino {
             TextBlock textBlock = new TextBlock();
             textBlock.Text = text;
             LogContent.Children.Add(textBlock);
-            
         }
     }
 }
